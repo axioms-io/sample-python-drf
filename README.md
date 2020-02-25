@@ -26,3 +26,6 @@ export DJANGO_SECRET_KEY=djangosecretkey
 ```
 python manage.py runserver 0.0.0.0:5000
 ```
+
+## Test using Postman
+Postman collection is included in this repository. Import the collection in your Postman, setup environment variables `host` (i.e. localhost:5000) and `access_token` (you can obtain from your client) and test these APIs.
