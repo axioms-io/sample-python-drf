@@ -13,6 +13,10 @@
             "description": "Axioms Audience Identifier or Endpoint for this API resource",
             "value": "",
             "required": true
+        },
+        "DISABLE_COLLECTSTATIC": {
+            "description": "Don't run python manage.py collectstatic --noinput on deploy",
+            "value": "1"
         }
     },
     "repository": "https://github.com/axioms-io/sample-python-drf"
