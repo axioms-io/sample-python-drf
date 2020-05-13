@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yv7&==g2wb_c8bn_lnqnhbwr!n2b#fqv!p37i$-p4f(ofvwbe1'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "djangosecretkey")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -96,7 +96,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+# If environment variable
+AXIOMS_DOMAIN = os.environ.get("AXIOMS_DOMAIN", None)
+AXIOMS_AUDIENCE = os.environ.get("AXIOMS_AUDIENCE", None)
 
-AXIOMS_DOMAIN=env('AXIOMS_DOMAIN')
-AXIOMS_AUDIENCE=env('AXIOMS_AUDIENCE')
-URL_LIB_SSL_IGNORE=env('URL_LIB_SSL_IGNORE')
+# Else .env file
+if not AXIOMS_DOMAIN:
+    AXIOMS_DOMAIN=env('AXIOMS_DOMAIN')
+if not AXIOMS_AUDIENCE:
+    AXIOMS_AUDIENCE=env('AXIOMS_AUDIENCE')

@@ -7,11 +7,11 @@ django-configurations==2.1
 djangorestframework==3.10.3
 Markdown==3.0.1
 
-# Permission
-djangorestframework-composed-permissions==0.2.1
-
 # Axioms
-axioms-drf-py==0.0.1
-
+axioms-drf-py==0.0.2
+# -e /Users/abhishektiwari/d3ml/axioms/axioms-drf-py
 # Env variables
 django-environ==0.4.5
+
+# Gunicorn
+gunicorn==20.0.4
