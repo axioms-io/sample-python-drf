@@ -2,7 +2,7 @@
     "name": "Sample DRF Flask",
     "description": "Sample Python DRF APIs secured by Axioms authentication and authorization",
     "website": "http://axioms.io",
-    "success_url": "/",
+    "success_url": "/public",
     "env": {
         "AXIOMS_DOMAIN": {
             "description": "Axioms Domain",
