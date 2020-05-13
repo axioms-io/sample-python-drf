@@ -5,12 +5,16 @@ from axioms_drf.authentication import HasValidAccessToken
 from axioms_drf.permissions import HasAccessTokenScopes, HasAccessTokenRoles, HasAccessTokenPermissions
 
 
+class Index(APIView):
+    def get(self, request):
+        return Response({"api": "DRF Sample APIs"})
+
 class APIPublic(APIView):
     """
     Public API - no authentication required
     """
 
-    def get(self, request, format=None):
+    def get(self, request):
 
         return Response(
             {"message": "Hello from a public endpoint!"}, status=status.HTTP_200_OK
@@ -25,7 +29,7 @@ class APIPrivate(APIView):
     Private API - authentication required
     """
 
-    def get(self, request, format=None):
+    def get(self, request):
         return Response(
             {"message": "All good. You are authenticated!"}, status=status.HTTP_200_OK
         )
@@ -40,16 +44,16 @@ class SampleRole(APIView):
     permission_classes = (HasAccessTokenRoles,)
     access_token_roles = ["sample:role"]  # noqa
 
-    def get(self, request, format=None):
+    def get(self, request):
         return Response({"message": "Sample read."}, status=status.HTTP_200_OK,)
 
-    def post(self, request, format=None):
+    def post(self, request):
         return Response({"message": "Sample created."}, status=status.HTTP_200_OK,)
 
-    def patch(self, request, format=None):
+    def patch(self, request):
         return Response({"message": "Sample updated."}, status=status.HTTP_200_OK,)
 
-    def delete(self, request, format=None):
+    def delete(self, request):
         return Response({"message": "Sample deleted."}, status=status.HTTP_200_OK,)
 
 
@@ -71,14 +75,14 @@ class SamplePermission(APIView):
         return method_permissions[self.request.method]
 
 
-    def get(self, request, format=None):
+    def get(self, request):
         return Response({"message": "Sample read."}, status=status.HTTP_200_OK,)
 
-    def post(self, request, format=None):
+    def post(self, request):
         return Response({"message": "Sample created."}, status=status.HTTP_200_OK,)
 
-    def patch(self, request, format=None):
+    def patch(self, request):
         return Response({"message": "Sample updated."}, status=status.HTTP_200_OK,)
 
-    def delete(self, request, format=None):
+    def delete(self, request):
         return Response({"message": "Sample deleted."}, status=status.HTTP_200_OK,)
