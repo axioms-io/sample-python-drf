@@ -4,7 +4,7 @@ Django==2.2.10
 django-configurations==2.1
 
 # Rest apis
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 Markdown==3.0.1
 
 # Axioms
