@@ -14,7 +14,7 @@ nose-progressive==1.5.2
 coverage==4.5.2
 
 # Debug
-django-debug-toolbar==2.1
+django-debug-toolbar==2.2.1
 
 # Formatting
 black
